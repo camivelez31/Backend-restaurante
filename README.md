@@ -60,6 +60,10 @@ Backend-restaurante/
 - Pedidos
 - Pagos
 
+
+## Flujo de ramas
+Este proyecto utiliza ramas dev, feature, qa y prod para control con cambios.
+
 ## Autor
 
 Maria Camila Vélez Mazo
