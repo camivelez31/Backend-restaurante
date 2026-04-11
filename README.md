@@ -62,7 +62,17 @@ Backend-restaurante/
 
 
 ## Flujo de ramas
+
+Se implementa flujo de trabajo con ramas:
+- feat/*
+- dev
+- qa
+- prod
+
+
+## Flujo de ramas
 Este proyecto utiliza ramas dev, feature, qa y prod para control con cambios.
+
 
 ## Autor
 
