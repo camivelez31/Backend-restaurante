@@ -70,8 +70,21 @@ Se implementa flujo de trabajo con ramas:
 - prod
 
 
+##  Video de demostración
+
+En el siguiente enlace se muestra la ejecución del proyecto, incluyendo:
+
+- Pipeline CI/CD
+- Autenticación JWT
+- Rutas protegidas
+- Ejecución de migraciones y seeder
+
+link de video: https://drive.google.com/file/d/10Wsg7wSGalAot8Ugnembom-BAmXsEq9Z/view?usp=sharing
+=======
+
 ## Flujo de ramas
 Este proyecto utiliza ramas dev, feature, qa y prod para control con cambios.
+
 
 
 ## Autor
