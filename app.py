@@ -1,5 +1,8 @@
 from fastapi import FastAPI
 
+from core.error_handlers import app_exception_handler, generic_exception_handler
+from core.exceptions import AppException
+
 from endpoints.categoria_router import router as categoria_router
 from endpoints.cliente_router import router as cliente_router
 from endpoints.empleado_router import router as empleado_router
@@ -13,6 +16,9 @@ app = FastAPI(
     description="API para la gestion de un sistema de restaurante",
     version="1.0.0"
 )
+
+app.add_exception_handler(AppException, app_exception_handler)
+app.add_exception_handler(Exception, generic_exception_handler)
 
 app.include_router(cliente_router)
 app.include_router(empleado_router)
