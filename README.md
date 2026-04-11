@@ -60,6 +60,14 @@ Backend-restaurante/
 - Pedidos
 - Pagos
 
+## Flujo de ramas
+
+Se implementa flujo de trabajo con ramas:
+- feat/*
+- dev
+- qa
+- prod
+
 ## Autor
 
 Maria Camila Vélez Mazo
