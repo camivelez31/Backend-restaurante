@@ -10,6 +10,7 @@ from endpoints.mesa_router import router as mesa_router
 from endpoints.pago_router import router as pago_router
 from endpoints.pedido_router import router as pedido_router
 from endpoints.plato_router import router as plato_router
+from endpoints.auth_router import router as auth_router
 
 app = FastAPI(
     title="API REST Restaurante",
@@ -27,3 +28,4 @@ app.include_router(categoria_router)
 app.include_router(plato_router)
 app.include_router(pedido_router)
 app.include_router(pago_router)
+app.include_router(auth_router)

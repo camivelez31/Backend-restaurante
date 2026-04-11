@@ -5,3 +5,4 @@ from entities.mesa import Mesa
 from entities.pago import Pago
 from entities.pedido import Pedido
 from entities.plato import Plato
+from entities.usuario import Usuario

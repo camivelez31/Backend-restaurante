@@ -7,12 +7,17 @@ from database.connection import get_db
 from entities.clientes import Cliente
 from schemas.cliente_schema import ClienteCreate, ClienteResponse, ClienteUpdate
 from core.exceptions import NotFoundException
+from core.auth import get_current_user
+from entities.usuario import Usuario
 
 router = APIRouter(prefix="/clientes", tags=["Clientes"])
 
 
 @router.get("/", response_model=List[ClienteResponse])
-def listar_clientes(db: Session = Depends(get_db)):
+def listar_clientes(
+    db: Session = Depends(get_db),
+    current_user: Usuario = Depends(get_current_user)
+):
    
     return db.query(Cliente).all()
 

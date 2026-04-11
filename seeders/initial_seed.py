@@ -3,6 +3,8 @@ from entities.categoria import Categoria
 from entities.clientes import Cliente
 from entities.empleado import Empleado
 from entities.mesa import Mesa
+from entities.usuario import Usuario
+from utils.security import get_password_hash
 
 
 def seed_categorias(db):
@@ -98,6 +100,7 @@ def run_seed():
         seed_mesas(db)
         seed_cliente_inicial(db)
         seed_empleado_inicial(db)
+        seed_usuario_inicial(db)
 
         db.commit()
         print("Seeder ejecutado correctamente.")
@@ -107,3 +110,22 @@ def run_seed():
         print(error)
     finally:
         db.close()
+
+def seed_usuario_inicial(db):
+    """
+    Inserta un usuario inicial si no existe.
+    """
+    existente = db.query(Usuario).filter(
+        Usuario.username == "admin"
+    ).first()
+
+    if not existente:
+
+        password = "Admin123*"
+         
+        nuevo_usuario = Usuario(
+            username="admin",
+            correo="admin@restaurante.com",
+            hashed_password=get_password_hash(password[:72])
+        )
+        db.add(nuevo_usuario)
