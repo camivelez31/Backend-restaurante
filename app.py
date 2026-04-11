@@ -11,11 +11,27 @@ from endpoints.pago_router import router as pago_router
 from endpoints.pedido_router import router as pedido_router
 from endpoints.plato_router import router as plato_router
 from endpoints.auth_router import router as auth_router
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(
     title="API REST Restaurante",
     description="API para la gestion de un sistema de restaurante",
     version="1.0.0"
+)
+
+origins = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 app.add_exception_handler(AppException, app_exception_handler)
