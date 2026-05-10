@@ -252,6 +252,37 @@ http://127.0.0.1:8000/docs
 * PUT /pagos/{id}
 * DELETE /pagos/{id}
 
+## Repositorio frontend
+
+Repositorio del frontend Restaurante MAG:
+
+https://github.com/camivelez31/frontend-restaurante
+
+---
+
+## Video de demostración Examen 3 y 4
+
+En el siguiente video se muestra:
+
+- Integración backend y frontend
+- Login con JWT
+- Consumo de API REST
+- Middleware de seguridad
+- Configuración CORS
+- Rutas protegidas
+- Consulta de clientes y pedidos
+- Logout
+- Pull Requests
+- Pipeline CI/CD
+- Seeder y datos de prueba
+
+Link del video:
+
+https://drive.google.com/file/d/1Fo5DPRQWclCxrhvqcjU9JrV23wONEyO7/view?usp=sharing
+
+
+
+
 ### Autor
 
 **Maria Camila Vélez Mazo**
