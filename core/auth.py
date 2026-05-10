@@ -12,9 +12,7 @@ oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/login")
 
 
 def get_current_user(token: str = Depends(oauth2_scheme), db: Session = Depends(get_db)) -> Usuario:
-    """
-    Obtiene el usuario autenticado a partir del token JWT.
-    """
+  
     try:
         payload = decode_access_token(token)
         username: str = payload.get("sub")

@@ -12,6 +12,7 @@ from endpoints.pedido_router import router as pedido_router
 from endpoints.plato_router import router as plato_router
 from endpoints.auth_router import router as auth_router
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi import Request
 
 app = FastAPI(
     title="API REST Restaurante",
@@ -24,6 +25,8 @@ origins = [
     "http://127.0.0.1:3000",
     "http://localhost:5173",
     "http://127.0.0.1:5173",
+    "http://127.0.0.1:8080",
+    "http://localhost:8080",
 ]
 
 app.add_middleware(
@@ -45,3 +48,20 @@ app.include_router(plato_router)
 app.include_router(pedido_router)
 app.include_router(pago_router)
 app.include_router(auth_router)
+
+@app.middleware("http")
+async def security_headers(request: Request, call_next):
+
+    response = await call_next(request)
+
+    response.headers["X-Content-Type-Options"] = "nosniff"
+
+    response.headers["X-Frame-Options"] = "DENY"
+
+    response.headers["X-XSS-Protection"] = "1; mode=block"
+
+    response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
+
+    response.headers["Content-Security-Policy"] = "default-src 'self' https: 'unsafe-inline' 'unsafe-eval'; img-src 'self' data: https:;"
+
+    return response
