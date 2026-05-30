@@ -1,24 +1,18 @@
 # Backend-restaurante
 
-API REST para un sistema de restaurante desarrollada con FastAPI, Uvicorn y PostgreSQL en Neon.
+API REST para un sistema de restaurante desarrollada con FastAPI, SQLAlchemy y PostgreSQL.
 
-## Descripción
+---
 
-Este proyecto fue desarrollado para el examen de la asignatura Aplicación y Servicios Web.
+# Descripción
 
-El sistema permite gestionar diferentes recursos de un restaurante mediante una API REST y un menú por consola que consume dicha API.
+Proyecto desarrollado para la asignatura Aplicación y Servicios Web.
 
-## Funcionalidades
+El sistema permite gestionar diferentes recursos de un restaurante mediante una API REST con autenticación JWT, rutas protegidas y consumo desde frontend web.
 
-- CRUD de clientes
-- CRUD de empleados
-- CRUD de mesas
-- CRUD de categorias
-- CRUD de platos
-- CRUD de pedidos
-- CRUD de pagos
+---
 
-## Tecnologías utilizadas
+# Tecnologías utilizadas
 
 - Python
 - FastAPI
@@ -26,10 +20,28 @@ El sistema permite gestionar diferentes recursos de un restaurante mediante una 
 - SQLAlchemy
 - PostgreSQL
 - Neon
-- Requests
 - Pydantic
+- JWT Authentication
 
-## Estructura del proyecto
+---
+
+# Funcionalidades principales
+
+- CRUD de clientes
+- CRUD de empleados
+- CRUD de mesas
+- CRUD de categorías
+- CRUD de platos
+- CRUD de pedidos
+- CRUD de pagos
+- Autenticación JWT
+- Rutas protegidas
+- Middleware de seguridad
+- Configuración CORS
+
+---
+
+# Estructura del proyecto
 
 ```bash
 Backend-restaurante/
@@ -39,6 +51,7 @@ Backend-restaurante/
 ├── endpoints/
 ├── entities/
 ├── schemas/
+├── core/
 ├── .env
 ├── .gitignore
 ├── app.py
@@ -46,68 +59,120 @@ Backend-restaurante/
 ├── main.py
 ├── README.md
 ├── requirements.txt
-└── test_connection.py 
+└── test_connection.py
 ```
 
-```md
-## Entidades del sistema
+---
 
+# Entidades ORM
+
+El sistema cuenta con ocho entidades ORM:
+
+- Usuarios
 - Clientes
 - Empleados
 - Mesas
-- Categorias
+- Categorías
 - Platos
 - Pedidos
 - Pagos
 
+---
 
-## Flujo de ramas
+# Configuración del proyecto
 
-Se implementa flujo de trabajo con ramas:
+## Clonar repositorio
+
+```bash
+git clone https://github.com/camivelez31/Backend-restaurante.git
+```
+
+---
+
+## Crear entorno virtual
+
+```bash
+python -m venv venv
+```
+
+---
+
+## Activar entorno virtual
+
+### Windows
+
+```bash
+venv\Scripts\activate
+```
+
+---
+
+## Instalar dependencias
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+# Ejecución del backend
+
+```bash
+uvicorn app:app --reload
+```
+
+---
+
+# Swagger
+
+```text
+http://127.0.0.1:8000/docs
+```
+
+---
+
+# Seguridad implementada
+
+- JWT Authentication
+- Authorization Bearer
+- Middleware de seguridad
+- CORS configurado
+- Protección de rutas
+
+---
+
+# Flujo de ramas
+
+El proyecto utiliza flujo de ramas con:
+
 - feat/*
 - dev
 - qa
 - prod
 
+---
 
+# Video de demostración
 
-##  Video de demostración
+En el siguiente enlace se muestra:
 
-En el siguiente enlace se muestra la ejecución del proyecto, incluyendo:
-
-- Pipeline CI/CD
-- Autenticación JWT
+- Integración backend y frontend
+- Login JWT
+- Consumo de API REST
+- Middleware de seguridad
+- CORS
 - Rutas protegidas
-- Ejecución de migraciones y seeder
+- Pull Requests
+- Pipeline CI/CD
+- Seeder y datos de prueba
 
-<<<<<<< HEAD
-link de video examen  2: https://drive.google.com/file/d/10Wsg7wSGalAot8Ugnembom-BAmXsEq9Z/view?usp=sharing
+## Link del video
 
-link de video: https://drive.google.com/file/d/10Wsg7wSGalAot8Ugnembom-BAmXsEq9Z/view?usp=sharing
+https://drive.google.com/file/d/10Wsg7wSGalAot8Ugnembom-BAmXsEq9Z/view?usp=sharing
 
-## Flujo de ramas
-Este proyecto utiliza ramas dev, feature, qa y prod para control con cambios.
+---
 
+# Autor
 
-
-
-## Autor
-
-Maria Camila Vélez Mazo
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+María Camila Vélez Mazo
+Aplicación y Servicios Web - 2026-1
